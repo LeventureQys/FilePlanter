@@ -1,0 +1,15 @@
+﻿  Reading Qt configuration (D:/tool/5.10.1/msvc2015/bin/qmake)
+  uic FilePlanter.ui
+  uic Ui\userInfo.ui
+  rcc FilePlanter.qrc
+  moc FilePlanter.h
+  moc userInfo.h
+  moc LgNetwork\QtTCPServerHandler.h
+   RCC: Warning: No resources in 'D:\Workshop\works\FilePlanter\FilePlanter\FilePlanter.qrc'.
+   D:\Workshop\works\FilePlanter\FilePlanter\FilePlanter.ui: Warning: The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget1'.
+  QtTcpBaseHandler.cpp
+  QtTCPServerHandler.cpp
+  userInfo.cpp
+  FilePlanter.cpp
+  main.cpp
+LgNetwork\QtTCPServerHandler.cpp(4): fatal error C1083: 无法打开包括文件: “QNetworkInterface”: No such file or directory
