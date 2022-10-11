@@ -24,7 +24,7 @@ void StudentFileTransfer::on_btn_choosefile_clicked()
         if (!file_path.isEmpty()) {
             this->ui.line_file->setText(file_path);
         }
-        //状态全清零，并重试链表
+        //重新选择文件后状态全清零，并重试链表
         foreach(Users temp_user, user_list) {
             temp_user.fileRecState = false;
 			temp_user.info->SetState(false);
