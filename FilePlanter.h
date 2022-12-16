@@ -9,6 +9,7 @@
 #include "qwidget.h"
 #include "qsystemtrayicon.h"
 #include "qhostinfo.h"
+#include "qsettings.h"
 using namespace std;
 
 struct Users {
@@ -57,8 +58,6 @@ public:
     ~StudentFileTransfer();
     QList<Users> user_list;
     qint32 seat = 0;
-
-
 private slots:
 
     //几个按钮事件
@@ -74,6 +73,8 @@ private slots:
     void RemoveUser(QString sIp);
 	//向指定用户重新发送文件
 	void ReSendingFile(QString sip);
+protected:
+	void closeEvent(QCloseEvent *events);
 private:
     //文件的标题，如果有这个内容则说明当前发送文件给学生端
     const QByteArray file_title = QByteArray("NewFile");
@@ -82,6 +83,7 @@ private:
     void addMessage(QString strMessage);
     QtTCPServerHandler *s_tcp;
     void initTcpServerHandler();
+	QString current_file_path = "";
 
     //更新用户列表，将当前列表内的widget清空，然后重新插入widget
     void UpdateUserList();

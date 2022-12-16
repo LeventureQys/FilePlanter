@@ -33,6 +33,7 @@ class Ui_StudentFileTransferClass
 {
 public:
     QWidget *centralWidget;
+    QLabel *label;
     QPushButton *btn_sendfile;
     QPlainTextEdit *text_cmd;
     QLabel *label_3;
@@ -50,10 +51,6 @@ public:
     QScrollArea *scroll_userlist;
     QWidget *scrollAreaWidgetContents;
     QVBoxLayout *verticalLayout_3;
-    QWidget *widget;
-    QHBoxLayout *horizontalLayout_3;
-    QLabel *label;
-    QLabel *label_4;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -67,6 +64,10 @@ public:
         StudentFileTransferClass->setMaximumSize(QSize(650, 400));
         centralWidget = new QWidget(StudentFileTransferClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(310, 320, 121, 21));
+        label->setStyleSheet(QString::fromUtf8("font: 9pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
         btn_sendfile = new QPushButton(centralWidget);
         btn_sendfile->setObjectName(QStringLiteral("btn_sendfile"));
         btn_sendfile->setGeometry(QRect(10, 60, 75, 23));
@@ -156,26 +157,6 @@ public:
 
         verticalLayout_2->addWidget(scroll_userlist);
 
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(310, 320, 331, 20));
-        horizontalLayout_3 = new QHBoxLayout(widget);
-        horizontalLayout_3->setSpacing(6);
-        horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(widget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setStyleSheet(QString::fromUtf8("font: 9pt \"\345\276\256\350\275\257\351\233\205\351\273\221\";"));
-
-        horizontalLayout_3->addWidget(label);
-
-        label_4 = new QLabel(widget);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-
-        horizontalLayout_3->addWidget(label_4);
-
         StudentFileTransferClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(StudentFileTransferClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -196,14 +177,13 @@ public:
     void retranslateUi(QMainWindow *StudentFileTransferClass)
     {
         StudentFileTransferClass->setWindowTitle(QApplication::translate("StudentFileTransferClass", "StudentFileTransfer", nullptr));
+        label->setText(QApplication::translate("StudentFileTransferClass", "Design by:Leventure", nullptr));
         btn_sendfile->setText(QApplication::translate("StudentFileTransferClass", "\345\217\221\351\200\201\346\226\207\344\273\266", nullptr));
-        label_3->setText(QApplication::translate("StudentFileTransferClass", "\345\221\275\344\273\244\350\241\214\350\276\223\345\207\272\357\274\232", nullptr));
+        label_3->setText(QApplication::translate("StudentFileTransferClass", "\345\221\275\344\273\244\350\241\214\350\276\223\345\207\272", nullptr));
         label_2->setText(QApplication::translate("StudentFileTransferClass", "\346\226\207\344\273\266\345\217\221\351\200\201\345\231\250", nullptr));
         btn_choosefile->setText(QApplication::translate("StudentFileTransferClass", "\351\200\211\346\213\251\346\226\207\344\273\266", nullptr));
-        lab_users->setText(QApplication::translate("StudentFileTransferClass", "\345\275\223\345\211\215\345\234\250\347\272\277\347\224\250\346\210\267:0\344\272\272", nullptr));
+        lab_users->setText(QApplication::translate("StudentFileTransferClass", "\345\275\223\345\211\215\345\234\250\347\272\277\347\224\250\346\210\267:x\344\272\272", nullptr));
         btn_userfresh->setText(QApplication::translate("StudentFileTransferClass", "\345\210\267\346\226\260", nullptr));
-        label->setText(QApplication::translate("StudentFileTransferClass", "\345\255\246\347\224\237\347\253\257\347\250\213\345\272\217\346\233\264\346\226\260\344\270\200\351\224\256\351\203\250\347\275\262\345\267\245\345\205\267", nullptr));
-        label_4->setText(QApplication::translate("StudentFileTransferClass", "Design by:Leventure", nullptr));
     } // retranslateUi
 
 };

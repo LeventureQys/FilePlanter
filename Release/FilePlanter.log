@@ -1,3 +1,22 @@
-﻿  FilePlanter.cpp
-  FilePlanter.vcxproj -> G:\Server\轮子\第三方轮子\文件部署工具-李文轩\FilePlanter\Release\FilePlanter.exe
-  FilePlanter.vcxproj -> G:\Server\轮子\第三方轮子\文件部署工具-李文轩\FilePlanter\Release\FilePlanter.pdb (Full PDB)
+﻿  Reading Qt configuration (D:/tool/5.10.1/msvc2015/bin/qmake)
+  uic FilePlanter.ui
+  uic Ui\userInfo.ui
+  rcc FilePlanter.qrc
+  moc FilePlanter.h
+  moc userInfo.h
+  moc LgNetwork\QtTCPServerHandler.h
+   D:\Workshop\works\FilePlanter\FilePlanter\FilePlanter.ui: Warning: The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget1'.
+   RCC: Warning: No resources in 'D:\Workshop\works\FilePlanter\FilePlanter\FilePlanter.qrc'.
+  QtTcpBaseHandler.cpp
+  QtTCPServerHandler.cpp
+  userInfo.cpp
+  FilePlanter.cpp
+  main.cpp
+  qrc_FilePlanter.cpp
+  moc_FilePlanter.cpp
+  moc_userInfo.cpp
+  moc_QtTCPServerHandler.cpp
+    正在创建库 D:\Workshop\works\FilePlanter\Release\FilePlanter.lib 和对象 D:\Workshop\works\FilePlanter\Release\FilePlanter.exp
+qtmain.lib(qtmain_win.obj) : warning LNK4099: 未找到 PDB“qtmain.pdb”(使用“qtmain.lib(qtmain_win.obj)”或在“D:\Workshop\works\FilePlanter\Release\qtmain.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+  FilePlanter.vcxproj -> D:\Workshop\works\FilePlanter\Release\FilePlanter.exe
+  FilePlanter.vcxproj -> D:\Workshop\works\FilePlanter\Release\FilePlanter.pdb (Full PDB)

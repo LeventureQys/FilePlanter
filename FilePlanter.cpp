@@ -8,6 +8,10 @@ StudentFileTransfer::StudentFileTransfer(QWidget *parent)
     this->initTcpServerHandler();
 	//获得本机的ip，并建立连接
 	this->s_tcp->Open(7777);
+
+	QSettings result("Path.ini", QSettings::IniFormat);
+
+	this->current_file_path = result.value("cur_path").toString();
 }
 
 StudentFileTransfer::~StudentFileTransfer()
@@ -20,16 +24,22 @@ StudentFileTransfer::~StudentFileTransfer()
 void StudentFileTransfer::on_btn_choosefile_clicked()
 {
     try {
-        QString file_path = QFileDialog::getOpenFileName(this, QStringLiteral("请选择需要发送的文件"), "C:", QStringLiteral("任何文件(*)"));
+		QString find_path = "C:/";
+		if (this->current_file_path != "") {
+			find_path = this->current_file_path;
+		}
+        QString file_path = QFileDialog::getOpenFileName(this, QStringLiteral("请选择需要发送的文件"), this->current_file_path, QStringLiteral("任何文件(*)"));
+		//读取一下这个文件的路径，并且保存到一个静态变量中去
+		
         if (!file_path.isEmpty()) {
             this->ui.line_file->setText(file_path);
+			this->current_file_path = file_path.left(file_path.lastIndexOf("/"));
+
         }
-        //重新选择文件后状态全清零，并重试链表
+        //状态全清零，并重试链表
         foreach(Users temp_user, user_list) {
             temp_user.fileRecState = false;
-			temp_user.info->SetState(false);
         }
-
         this->UpdateUserList();
     }catch (exception &e) {
         qDebug() << e.what();
@@ -56,27 +66,6 @@ void StudentFileTransfer::on_btn_sendfile_clicked()
 }
 void StudentFileTransfer::on_btn_userfresh_clicked()
 {
-    ////临时添加一个人的内测按钮 
-
-    //Users user_node;
-    //user_node.sIp = QString::number(this->seat++);
-    //user_node.sPort = 2333;
-    //user_node.userName = "strValues[3]";
-
-    ////反正新加入的用户不管说什么都不可能已经接到文件了不是吗
-    //user_node.fileRecState = false;
-
-    //userInfo* temp_info = new userInfo();
-    //temp_info->SetName(user_node.userName);
-    //temp_info->SetSip(user_node.sIp);
-    //temp_info->SetState(user_node.fileRecState);
-
-    //user_node.info = temp_info;
-    //this->user_list.append(user_node);
-    //connect(temp_info, SIGNAL(KickUserInfo(QString)), this, SLOT(RemoveUser(QString)));
-    //this->addMessage(QString("## New User Comming in : %1").arg(user_node.sIp));
-    ////
-
     this->UpdateUserList();
 }
 QString StudentFileTransfer::getLocalIp()
@@ -247,5 +236,15 @@ void StudentFileTransfer::RemoveUser(QString sIp)
     }
 
     this->UpdateUserList();
+}
+
+void StudentFileTransfer::closeEvent(QCloseEvent * events)
+{
+	//退出事件，要写入一个QSettings
+
+	QSettings result("Path.ini", QSettings::IniFormat);
+	if (this->current_file_path != "") {
+		result.setValue("cur_path", this->current_file_path);
+	}
 }
 

@@ -1,7 +1,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
 <Qt_DEFINES_>UNICODE;_UNICODE;WIN32;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Qt_DEFINES_>
-<Qt_INCLUDEPATH_>G:\Server\??\?????\??????-???\FilePlanter\FilePlanter\Debug\qmake\temp;D:\tool\5.10.1\msvc2015\include;D:\tool\5.10.1\msvc2015\include\QtWidgets;D:\tool\5.10.1\msvc2015\include\QtGui;D:\tool\5.10.1\msvc2015\include\QtANGLE;D:\tool\5.10.1\msvc2015\include\QtCore;\include;D:\tool\5.10.1\msvc2015\mkspecs\win32-msvc</Qt_INCLUDEPATH_>
+<Qt_INCLUDEPATH_>D:\tool\5.10.1\msvc2015\include;D:\tool\5.10.1\msvc2015\include\QtWidgets;D:\tool\5.10.1\msvc2015\include\QtGui;D:\tool\5.10.1\msvc2015\include\QtANGLE;D:\tool\5.10.1\msvc2015\include\QtCore;\include;D:\tool\5.10.1\msvc2015\mkspecs\win32-msvc</Qt_INCLUDEPATH_>
 <Qt_LIBS_>D:\tool\5.10.1\msvc2015\lib\qtmaind.lib;shell32.lib;D:\tool\5.10.1\msvc2015\lib\Qt5Widgetsd.lib;D:\tool\5.10.1\msvc2015\lib\Qt5Guid.lib;D:\tool\5.10.1\msvc2015\lib\Qt5Cored.lib</Qt_LIBS_>
 <Qt_LIBPATH_>D:\tool\5.10.1\msvc2015\lib;C:\Utils\my_sql\my_sqlx86\lib;C:\Utils\postgresqlx86\pgsql\lib</Qt_LIBPATH_>
 <QMake_QT_SYSROOT_></QMake_QT_SYSROOT_>
